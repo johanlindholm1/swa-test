@@ -19,7 +19,7 @@ const handleLogin = (
 const Login: React.FC<LoginProps> = ({ msalInstance, loginRequest }) => {
   return (
     <div>
-      <h1>Please login</h1>Please login
+      <h1>Please login</h1>
       <button
         type="button"
         style={{

@@ -1,5 +1,5 @@
 import React from 'react'
-import { PublicClientApplication, RedirectRequest } from '@azure/msal-browser'
+import { PublicClientApplication } from '@azure/msal-browser'
 
 type HomepageProps = {
   msalInstance: PublicClientApplication
@@ -15,7 +15,8 @@ const handleLogout = (instance: PublicClientApplication): void => {
 const Homepage: React.FC<HomepageProps> = ({ msalInstance }) => {
   return (
     <div>
-      Homepage
+      <h1>Homepage</h1>
+
       <button
         type="button"
         style={{
