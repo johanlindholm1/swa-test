@@ -1,21 +1,25 @@
 import React from 'react'
 import { PublicClientApplication, RedirectRequest } from '@azure/msal-browser'
 
-type HomepageProps = {
+type LoginProps = {
   msalInstance: PublicClientApplication
+  loginRequest: RedirectRequest
 }
 
-const handleLogout = (instance: PublicClientApplication): void => {
-  instance.logoutRedirect().catch((e: unknown) => {
+const handleLogin = (
+  instance: PublicClientApplication,
+  loginRequest: RedirectRequest
+): void => {
+  instance.loginRedirect(loginRequest).catch((e: unknown) => {
     // eslint-disable-next-line no-console
     console.error(e)
   })
 }
 
-const Homepage: React.FC<HomepageProps> = ({ msalInstance }) => {
+const Login: React.FC<LoginProps> = ({ msalInstance, loginRequest }) => {
   return (
     <div>
-      Homepage
+      <h1>Please login</h1>Please login
       <button
         type="button"
         style={{
@@ -26,13 +30,13 @@ const Homepage: React.FC<HomepageProps> = ({ msalInstance }) => {
           alignSelf: 'center',
         }}
         onClick={() => {
-          handleLogout(msalInstance)
+          handleLogin(msalInstance, loginRequest)
         }}
       >
-        logout
+        Login
       </button>
     </div>
   )
 }
 
-export default Homepage
+export default Login
