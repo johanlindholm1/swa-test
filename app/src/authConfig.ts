@@ -13,7 +13,7 @@ export const msalConfig = {
 }
 
 export const loginRequest = {
-  scopes: [],
+  scopes: ['api://cb216348-899c-4810-bddd-8a8a033dabf8/user_impersonation'],
 }
 
 export const protectedResources = {
