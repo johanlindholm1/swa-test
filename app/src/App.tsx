@@ -1,11 +1,11 @@
 import React from 'react'
-import logo from './logo.svg'
+import Homepage from './view/homepage'
 import './App.css'
 
 function App(): JSX.Element {
   return (
     <div className="App">
-      <div>Hello world</div>
+      <Homepage />
     </div>
   )
 }
