@@ -13,6 +13,11 @@ import Login from './view/login'
 function App(): JSX.Element {
   const msalInstance = new PublicClientApplication(msalConfig)
 
+  const getToken = async (): Promise<void> => {
+    const token = await msalInstance.acquireTokenSilent(loginRequest)
+    console.log(token)
+  }
+  getToken()
   return (
     <MsalProvider instance={msalInstance}>
       <AuthenticatedTemplate>

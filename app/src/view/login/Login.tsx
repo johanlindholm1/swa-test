@@ -17,9 +17,14 @@ const handleLogin = (
 }
 
 const Login: React.FC<LoginProps> = ({ msalInstance, loginRequest }) => {
+  const loginPopup = async (): Promise<void> => {
+    await msalInstance.loginPopup(loginRequest)
+  }
+
+  loginPopup()
   return (
     <div>
-      <h1>Please login</h1>
+      {/* <h1>Please login</h1>
       <button
         type="button"
         style={{
@@ -34,7 +39,7 @@ const Login: React.FC<LoginProps> = ({ msalInstance, loginRequest }) => {
         }}
       >
         Login
-      </button>
+      </button> */}
     </div>
   )
 }
