@@ -11,7 +11,6 @@ const handleLogin = (
   loginRequest: RedirectRequest
 ): void => {
   instance.loginRedirect(loginRequest).catch((e: unknown) => {
-    // eslint-disable-next-line no-console
     console.error(e)
   })
 }
@@ -24,7 +23,7 @@ const Login: React.FC<LoginProps> = ({ msalInstance, loginRequest }) => {
   loginPopup()
   return (
     <div>
-      {/* <h1>Please login</h1>
+      <h1>Please login</h1>
       <button
         type="button"
         style={{
@@ -39,7 +38,7 @@ const Login: React.FC<LoginProps> = ({ msalInstance, loginRequest }) => {
         }}
       >
         Login
-      </button> */}
+      </button>
     </div>
   )
 }
